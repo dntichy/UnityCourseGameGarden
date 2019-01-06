@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +17,7 @@ public class LevelController : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerStats.GameStart == null) PlayerStats.GameStart = DateTime.Now;
         winLabel.SetActive(false);
         loseLabel.SetActive(false);
     }
@@ -37,6 +40,7 @@ public class LevelController : MonoBehaviour
 
     IEnumerator HandleWinCondition()
     {
+        PlayerStats.Level++;
         winLabel.SetActive(true);
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(waitToLoad);

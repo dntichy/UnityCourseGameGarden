@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Attacker">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBIgAAAAAAAAAAAAAAAAAAAJAAABAACAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Attacker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AttackerSpawner">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAEAAEAwQABIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AttackerSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DamageCollider">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DamageCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Defender">
+    <Position X="16.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Defender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DefenderButton">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DefenderButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DefenderSpawner">
+    <Position X="2" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAIAAAAAAAFIAIAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DefenderSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fox">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Fox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameTimer">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\GameTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gravestone">
+    <Position X="15" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gravestone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Health" Collapsed="true">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Health.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JsonHelper">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="JsonHelper.Wrapper&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\JsonHelper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\JsonHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelController">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAAQAAAACAAAAAJAAAQIAAAAIAAAAAAAAEAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\LevelController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelLoader">
+    <Position X="4.5" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAIAACEAAAAQADAAAIAAAAAEAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\LevelLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LivesDisplay">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAIAAAAAIAAAAAAAABAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\LivesDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lizard">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Lizard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerWrap">
+    <Position X="1.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAEEAAAAAAAAAAABAgA=</HashCode>
+      <FileName>Assets\Scripts\PlayerWrap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projectile">
+    <Position X="17" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAgAAAAAAAAAAAAEAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreBoard">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACgAAAIAAAAAABAAAAAoAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScoreBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shooter">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQgCABAACAAAEAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Shooter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StarDisplay">
+    <Position X="8.25" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAABAACAAAAAAAAACAAAAAAAAAAgAAACBAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\StarDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

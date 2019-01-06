@@ -2,38 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System;
+using Assets.Scripts;
 
+//https://stackoverflow.com/questions/36239705/serialize-and-deserialize-json-and-json-array-in-unity
 
 public class ScoreBoard : MonoBehaviour
 {
 
     [SerializeField] GameObject Entry;
+    PlayerWrap[] Players;
+    readonly string url = "http://localhost:25325/api/values";
+
+
     // Start is called before the first frame update
     void Start()
     {
-
-        StartCoroutine(Upload());
-
+        StartCoroutine(GetScoreData());
     }
 
-    IEnumerator Upload()
+    IEnumerator GetScoreData()
     {
-        AddObjectToScreen();
-
-
-        var url = "http://localhost:25325/api/values";
-
-        //POST
-        //WWWForm form = new WWWForm();
-        //form.AddField("Name", "MojNick");
-        //form.AddField("Level", 3);
-        //var request = UnityWebRequest.Post(url, form);
-        //request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-        //request.SetRequestHeader("Accept", "text/json");
-        //yield return request.SendWebRequest();
-
-
-
         //GET
         using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
@@ -45,30 +37,86 @@ public class ScoreBoard : MonoBehaviour
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
-                Debug.Log(www);
-
             }
             else
             {
-                Debug.Log(www.downloadHandler.text);
-
-                Debug.Log("Form upload complete!");
+                string jsonString = FixJson(www.downloadHandler.text);
+                Players = JsonHelper.FromJson<PlayerWrap>(jsonString);
+                AddObjectToScreen();
+                Debug.Log(Players[0].name);
             }
         }
     }
 
+    private string FixJson(string value)
+    {
+        value = "{\"Items\":" + value + "}";
+        return value;
+    }
+
     public void AddObjectToScreen()
     {
-        Vector3 vec = new Vector3();
-        vec.x = Entry.transform.position.x;
-        vec.y = Entry.transform.position.y - 30;
+        var transCoeficient = 45;
+        int countCoeficient = 0;
 
-        GameObject entry = Instantiate(Entry, Entry.transform.parent, true) as GameObject;
-        entry.transform.position = vec;
+        if (Players != null)
+        {
+            foreach (PlayerWrap player in Players)
+            {
+                Vector3 vec = new Vector3();
+                vec.x = Entry.transform.position.x;
+                vec.y = Entry.transform.position.y - transCoeficient * countCoeficient;
 
-        entry.transform.parent = transform;
+                GameObject entry = Instantiate(Entry, Entry.transform.parent, true) as GameObject;
+
+                entry.transform.position = vec;
+                entry.transform.Find("Name").GetComponent<Text>().text = player.name;
+                entry.transform.Find("Score").GetComponent<Text>().text = player.level.ToString();
+                entry.transform.Find("Game Start").GetComponent<Text>().text = player.gameStart;
+                entry.transform.Find("Game Finished").GetComponent<Text>().text = player.gameFinish;
+                entry.transform.Find("Killed Creatures").GetComponent<Text>().text = player.killedCreatures.ToString();
+                entry.transform.parent = transform;
+
+                countCoeficient++;
+            }
+        }
+    }
 
 
+
+    public void RequestInsert()
+    {
+        var inputField = FindObjectOfType<InputField>();
+        if (inputField.text.Length == 0) return;
+
+        StartCoroutine(SendGameResult(inputField.text));
+    }
+
+
+    private IEnumerator SendGameResult(string nickName)
+    {
+
+
+        var level = PlayerStats.Level;
+        var startGame = PlayerStats.GameStart;
+        var killedCreatures = PlayerStats.KilledCreatures;
+
+        //POST
+        WWWForm form = new WWWForm();
+
+        form.AddField("Name", nickName);
+        form.AddField("Level", level);
+        form.AddField("GameStart", startGame.ToString());
+        form.AddField("GameFinished", DateTime.Now.ToString());
+        form.AddField("KilledCreatures", killedCreatures);
+
+        var request = UnityWebRequest.Post(url, form);
+        request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        request.SetRequestHeader("Accept", "text/json");
+
+        yield return request.SendWebRequest();
+
+        FindObjectOfType<LevelLoader>().ShowScoreBoard();
 
     }
 }

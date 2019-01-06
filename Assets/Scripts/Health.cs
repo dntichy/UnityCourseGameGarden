@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,17 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             TriggerDeathVFX();
+
+            if (GetComponents<Attacker>() != null)
+            {
+                if (gameObject.GetComponentInParent<Attacker>() != null)
+                {
+                    PlayerStats.KilledCreatures++;
+                    Debug.Log(PlayerStats.KilledCreatures);
+                }
+            }
             Destroy(gameObject);
+
         }
     }
 

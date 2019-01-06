@@ -41,15 +41,18 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
-    public void LoadYouLose()
-    {
-        SceneManager.LoadScene("Lose Screen");
-    }
 
     public void ShowScoreBoard()
     {
         SceneManager.LoadScene("Score Board");
+}
+
+    public void ShowScoreBoardAndPromptNickName()
+    {
+        SceneManager.LoadScene("Score Board Prompt");
     }
+
+
     public void QuitGame()
     {
         Application.Quit();
