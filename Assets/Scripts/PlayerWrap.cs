@@ -1,5 +1,7 @@
 ﻿using System;
-
+/// <summary>
+/// Helper object that represents player
+/// </summary>
 [Serializable]
 public class PlayerWrap
 {

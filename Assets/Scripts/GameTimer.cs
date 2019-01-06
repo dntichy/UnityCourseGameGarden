@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Tracks Game time
+/// </summary>
 public class GameTimer : MonoBehaviour
 {
 

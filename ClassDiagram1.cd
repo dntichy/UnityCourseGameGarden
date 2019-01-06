@@ -94,7 +94,7 @@
   <Class Name="LevelLoader">
     <Position X="4.5" Y="7" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAgAIAACEAAAAQADAAAIAAAAAEAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAIAACEAQAAQABAAAIAAAAAEAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\LevelLoader.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -115,7 +115,7 @@
   <Class Name="PlayerWrap">
     <Position X="1.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAEEAAAAAAAAAAABAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAQAgAAAAAAAAEEAAAAAAAAAAABAgA=</HashCode>
       <FileName>Assets\Scripts\PlayerWrap.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -129,7 +129,7 @@
   <Class Name="ScoreBoard">
     <Position X="5.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAACgAAAIAAAAAABAAAAAoAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAACgAAAIAAAAAABAAAEAoAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Assets\Scripts\ScoreBoard.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -141,7 +141,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="StarDisplay">
-    <Position X="8.25" Y="2.5" Width="2.5" />
+    <Position X="9.5" Y="2.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>CAACAABAACAAAAAAAAACAAAAAAAAAAgAAACBAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\StarDisplay.cs</FileName>

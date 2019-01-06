@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts
 {
+    /// <summary>
+    /// Player statistics
+    /// </summary>
     public static class PlayerStats
     {
         private static int level = 1;

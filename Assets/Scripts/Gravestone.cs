@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Type of Defender
+/// </summary>
 public class Gravestone : MonoBehaviour
 {
    
@@ -10,7 +12,7 @@ public class Gravestone : MonoBehaviour
         Attacker attacker = otherCollider.GetComponent<Attacker>();
         if (attacker)
         {
-            //todo add animation
+            //todo add animation sometime
         }
     }
 }

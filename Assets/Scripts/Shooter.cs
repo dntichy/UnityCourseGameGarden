@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// If defender is shooter,spefify, projectile, Gun
+/// </summary>
 public class Shooter : MonoBehaviour
 {
     [SerializeField] GameObject projectile, gun;
@@ -45,7 +47,10 @@ public class Shooter : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Check if attacker is on Lane
+    /// </summary>
+    /// <returns></returns>
     private bool IsAttackerInLane()
     {
         //if lanespawner child count is <= 0  -> return false;
@@ -59,7 +64,9 @@ public class Shooter : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Fires Projectile
+    /// </summary>
     public void Fire()
     {
 

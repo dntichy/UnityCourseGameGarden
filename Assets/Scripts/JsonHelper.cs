@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// Helper class for json serializing
+/// </summary>
 public static class JsonHelper
 {
     public static T[] FromJson<T>(string json)

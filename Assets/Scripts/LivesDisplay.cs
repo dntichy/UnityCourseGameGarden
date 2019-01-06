@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// Displays lives of player
+/// </summary>
 public class LivesDisplay : MonoBehaviour
 {
 

@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Type of attacker
+/// </summary>
 public class Lizard : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D otherCollider)

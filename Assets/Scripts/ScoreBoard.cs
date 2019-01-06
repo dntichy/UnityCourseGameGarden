@@ -9,21 +9,26 @@ using System;
 using Assets.Scripts;
 
 //https://stackoverflow.com/questions/36239705/serialize-and-deserialize-json-and-json-array-in-unity
-
+/// <summary>
+/// Responsible for scoreBoard
+/// </summary>
 public class ScoreBoard : MonoBehaviour
 {
 
-    [SerializeField] GameObject Entry;
-    PlayerWrap[] Players;
-    readonly string url = "http://localhost:25325/api/values";
-
+    [SerializeField] GameObject Entry; //Entry in scoreboard
+    PlayerWrap[] Players; //Players retrieved from API
+    readonly string url = "http://localhost:25325/api/values"; //API URL
+ 
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(GetScoreData());
     }
-
+    /// <summary>
+  /// Gets data from API
+    /// </summary>
+    /// <returns></returns>
     IEnumerator GetScoreData()
     {
         //GET
@@ -47,13 +52,19 @@ public class ScoreBoard : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Helper function for fixing json from server to be parsed
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     private string FixJson(string value)
     {
         value = "{\"Items\":" + value + "}";
         return value;
     }
-
+    /// <summary>
+    /// Add entry to the screen
+    /// </summary>
     public void AddObjectToScreen()
     {
         var transCoeficient = 45;
@@ -83,7 +94,9 @@ public class ScoreBoard : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Starts coroutine with api post call with statistics and nickname
+    /// </summary>
     public void RequestInsert()
     {
         var inputField = FindObjectOfType<InputField>();
@@ -92,7 +105,11 @@ public class ScoreBoard : MonoBehaviour
         StartCoroutine(SendGameResult(inputField.text));
     }
 
-
+    /// <summary>
+    /// Sends gameresult to API
+    /// </summary>
+    /// <param name="nickName"></param>
+    /// <returns></returns>
     private IEnumerator SendGameResult(string nickName)
     {
 

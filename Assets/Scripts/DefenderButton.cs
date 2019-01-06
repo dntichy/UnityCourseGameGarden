@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Click on build spawner
+/// </summary>
 public class DefenderButton : MonoBehaviour
 {
 

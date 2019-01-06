@@ -4,6 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Responsible for levels, shows winLabel or Loselabel
+/// </summary>
 public class LevelController : MonoBehaviour
 {
 
@@ -11,7 +14,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] GameObject loseLabel;
 
     [SerializeField] float waitToLoad = 4f;
-    int numberOfAttackers = 0;
+    int numberOfAttackers = 0; //number of attacker
     bool levelTimerFinished = false;
 
 
@@ -21,12 +24,16 @@ public class LevelController : MonoBehaviour
         winLabel.SetActive(false);
         loseLabel.SetActive(false);
     }
-
+    /// <summary>
+    /// Attacker is spawned
+    /// </summary>
     public void AttackerSpawned()
     {
         numberOfAttackers++;
     }
-
+    /// <summary>
+    /// Attacker is killed
+    /// </summary>
     public void AttackerKilled()
     {
         numberOfAttackers--;
@@ -37,22 +44,29 @@ public class LevelController : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// In case of win level
+    /// </summary>
+    /// <returns></returns>
     IEnumerator HandleWinCondition()
     {
-        PlayerStats.Level++;
-        winLabel.SetActive(true);
-        GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(waitToLoad);
-        FindObjectOfType<LevelLoader>().LoadNextScene();
+        PlayerStats.Level++; //log stats
+        winLabel.SetActive(true); //show win label
+        GetComponent<AudioSource>().Play(); //play audio
+        yield return new WaitForSeconds(waitToLoad); //wait
+        FindObjectOfType<LevelLoader>().LoadNextScene(); //load next scene
     }
-
+    /// <summary>
+    /// In case of lose
+    /// </summary>
     public void HandleLoseCondition()
     {
         Time.timeScale = 0; //handle time -> stop it
         loseLabel.SetActive(true);
     }
-
+    /// <summary>
+    /// When Level time is finished
+    /// </summary>
     public void LevelTimerFinished()
     {
         Debug.Log("Time is up");
@@ -61,7 +75,9 @@ public class LevelController : MonoBehaviour
         StopSpawners();
     }
 
-
+    /// <summary>
+    /// Stops spawing on every lane
+    /// </summary>
     private void StopSpawners()
     {
         AttackerSpawner[] spawnerArray = FindObjectsOfType<AttackerSpawner>();
